@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, CardContent, Typography, Button } from '@mui/material';
+import { Card, CardContent, Typography, Button, CardActions } from '@mui/material';
 
-const PortfolioItem = ({ item }) => {
+const PortfolioItem = ({ item, onEdit, onDelete }) => {
   return (
     <Card>
       <CardContent>
@@ -12,6 +12,10 @@ const PortfolioItem = ({ item }) => {
           View Client Site
         </Button>
       </CardContent>
+      <CardActions>
+        <Button onClick={() => onEdit(item)}>Edit</Button>
+        <Button onClick={() => onDelete(item.id)}>Delete</Button>
+      </CardActions>
     </Card>
   );
 };
